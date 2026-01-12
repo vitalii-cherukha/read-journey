@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router';
 import NotFound from './components/common/NotFound/NotFound';
 import MainLayout from './components/layout/MainLayout/MainLayout';
-import LibraryPage from './pages/LibraryPage/LibraryPage';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
-import LoginPage from './pages/LoginPage/LoginPage';
-import ReadingPage from './pages/ReadingPage/ReadingPage';
-import RecommendedPage from './pages/RecommendedPage/RecommendedPage';
+import RegisterPage from './components/pages/RegisterPage/RegisterPage';
+import LoginPage from './components/pages/LoginPage/LoginPage';
+import RecommendedPage from './components/pages/RecommendedPage/RecommendedPage';
+import LibraryPage from './components/pages/LibraryPage/LibraryPage';
+import ReadingPage from './components/pages/ReadingPage/ReadingPage';
 
 function App() {
   return (
