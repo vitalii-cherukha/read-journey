@@ -1,5 +1,13 @@
+import Container from '../../common/Container/Container';
+
 const RegisterPage = () => {
-  return <div>RegisterPage</div>;
+  return (
+    <section>
+      <Container>
+        <div>RegisterPage</div>
+      </Container>
+    </section>
+  );
 };
 
 export default RegisterPage;
