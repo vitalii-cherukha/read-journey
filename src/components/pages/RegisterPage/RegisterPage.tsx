@@ -6,7 +6,14 @@ const RegisterPage = () => {
     <section>
       <Container>
         <div className={css.wrapper}>
-          <div className={css.formWrapper}></div>
+          <div className={css.formWrapper}>
+            <div className={css.logo}>
+              <svg>
+                <use href="#icon-logo" />
+              </svg>
+              <span>read journey</span>
+            </div>
+          </div>
           <div className={css.imgWrapper}>
             <img src="#" />
           </div>
