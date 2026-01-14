@@ -6,6 +6,22 @@
   --color-text-secondary: #1f1f1f;
 }
 
+@font-face {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./assets/fonts/Gilroy-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: medium;
+  src: url('./assets/fonts/Gilroy-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
 h1,
 h2,
 h3,
