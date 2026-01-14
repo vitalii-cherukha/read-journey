@@ -1,4 +1,5 @@
 import Container from '../../common/Container/Container';
+import LoginForm from '../../common/LoginForm/LoginForm';
 import css from './LoginPage.module.css';
 
 const LoginPage = () => {
@@ -13,6 +14,11 @@ const LoginPage = () => {
               </svg>
               <span className={css.logoText}>read journey</span>
             </div>
+            <h1 className={css.title}>
+              Expand your mind, reading{' '}
+              <span className={css.titleAccent}>a book</span>
+            </h1>
+            <LoginForm />
           </div>
           <div className={css.imgWrapper}>
             <img src="#" />

@@ -1,4 +1,5 @@
 import Container from '../../common/Container/Container';
+import RegisterForm from '../../common/RegisterForm/RegisterForm';
 import css from './RegisterPage.module.css';
 
 const RegisterPage = () => {
@@ -17,6 +18,7 @@ const RegisterPage = () => {
               Expand your mind, reading{' '}
               <span className={css.titleAccent}>a book</span>
             </h1>
+            <RegisterForm />
           </div>
           <div className={css.imgWrapper}>
             <img src="#" />

@@ -4,12 +4,14 @@
   --color-bg-secondary: #262626;
   --color-text: #f9f9f9;
   --color-text-secondary: #1f1f1f;
+  --color-accent: rgba(227, 227, 227, 30%);
+  --font-primary: 'Gilroy', sans-serif;
 }
 
 @font-face {
   font-family: 'Gilroy';
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   src: url('./assets/fonts/Gilroy-Bold.woff2') format('woff2');
   font-display: swap;
 }
@@ -17,7 +19,7 @@
 @font-face {
   font-family: 'Gilroy';
   font-style: normal;
-  font-weight: medium;
+  font-weight: 500;
   src: url('./assets/fonts/Gilroy-Medium.woff2') format('woff2');
   font-display: swap;
 }
@@ -70,6 +72,7 @@ fieldset {
 }
 
 body {
+  font-family: var(--font-primary);
   color: #f9f9f9;
 }
 

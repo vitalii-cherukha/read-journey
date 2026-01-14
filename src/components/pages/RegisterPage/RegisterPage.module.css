@@ -19,6 +19,7 @@ section {
   display: flex;
   align-items: center;
   gap: 4px;
+  margin-bottom: 40px;
 }
 
 .logoIcon {
@@ -34,6 +35,11 @@ section {
 }
 
 .title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
 }
 
 .titleAccent {
