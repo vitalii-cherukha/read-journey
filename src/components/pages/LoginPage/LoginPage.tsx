@@ -11,7 +11,7 @@ const LoginPage = () => {
               <svg className={css.logoIcon} width="42" height="17">
                 <use href="/sprite.svg#icon-logo" />
               </svg>
-              <span className={css.logoText}>READ JOURNEY</span>
+              <span className={css.logoText}>read journey</span>
             </div>
           </div>
           <div className={css.imgWrapper}>

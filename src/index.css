@@ -1,4 +1,5 @@
 :root {
+  --color-section-bg: #141414;
   --color-bg: #1f1f1f;
   --color-bg-secondary: #262626;
   --color-text: #f9f9f9;
@@ -54,4 +55,8 @@ fieldset {
 
 body {
   color: #f9f9f9;
+}
+
+section {
+  background-color: var(--color-section-bg);
 }
