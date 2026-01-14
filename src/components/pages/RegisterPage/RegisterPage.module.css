@@ -1,0 +1,47 @@
+section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formWrapper {
+  padding: 20px;
+  border-radius: 30px;
+  background-color: var(--color-bg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logoIcon {
+  fill: var(--color-text);
+}
+
+.logoText {
+  display: none;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  text-transform: uppercase;
+}
+
+.title {
+}
+
+.titleAccent {
+  color: var(--color-accent);
+}
+
+.imgWrapper {
+  padding: 20px 40px;
+  border-radius: 30px;
+  background-color: var(--color-bg);
+}

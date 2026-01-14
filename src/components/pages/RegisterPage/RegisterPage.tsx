@@ -13,6 +13,10 @@ const RegisterPage = () => {
               </svg>
               <span className={css.logoText}>read journey</span>
             </div>
+            <h1 className={css.title}>
+              Expand your mind, reading{' '}
+              <span className={css.titleAccent}>a book</span>
+            </h1>
           </div>
           <div className={css.imgWrapper}>
             <img src="#" />
