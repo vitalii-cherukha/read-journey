@@ -1,3 +1,10 @@
+:root {
+  --color-bg: #1f1f1f;
+  --color-bg-secondary: #262626;
+  --color-text: #f9f9f9;
+  --color-text-secondary: #1f1f1f;
+}
+
 h1,
 h2,
 h3,
@@ -43,4 +50,8 @@ fieldset {
   padding: 0;
   margin: 0;
   border: none;
+}
+
+body {
+  color: #f9f9f9;
 }

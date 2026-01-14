@@ -8,10 +8,10 @@ const RegisterPage = () => {
         <div className={css.wrapper}>
           <div className={css.formWrapper}>
             <div className={css.logo}>
-              <svg>
-                <use href="#icon-logo" />
+              <svg className={css.logoIcon} width="42" height="17">
+                <use href="/sprite.svg#icon-logo" />
               </svg>
-              <span>read journey</span>
+              <span className={css.logoText}>read journey</span>
             </div>
           </div>
           <div className={css.imgWrapper}>
