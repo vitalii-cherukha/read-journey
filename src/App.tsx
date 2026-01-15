@@ -9,21 +9,23 @@ import ReadingPage from './components/pages/ReadingPage/ReadingPage';
 
 function App() {
   return (
-    <Routes>
-      {/* Public routes */}
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/login" element={<LoginPage />} />
+    <main>
+      <Routes>
+        {/* Public routes */}
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
 
-      {/* Private routes with layout */}
-      <Route path="/" element={<MainLayout />}>
-        <Route path="recommended" element={<RecommendedPage />} />
-        <Route path="library" element={<LibraryPage />} />
-        <Route path="reading" element={<ReadingPage />} />
-        <Route index element={<RecommendedPage />} />
-      </Route>
+        {/* Private routes with layout */}
+        <Route path="/" element={<MainLayout />}>
+          <Route path="recommended" element={<RecommendedPage />} />
+          <Route path="library" element={<LibraryPage />} />
+          <Route path="reading" element={<ReadingPage />} />
+          <Route index element={<RecommendedPage />} />
+        </Route>
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </main>
   );
 }
 
