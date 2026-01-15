@@ -5,6 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 
 import { BarLoader } from 'react-spinners';
+import type { User } from '../../../types/user';
 
 interface RegisterFormProps {
   onSubmit: (data: User) => Promise<void>;
