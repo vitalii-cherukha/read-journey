@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
-import css from './FormRegistration.module.css';
+import css from './RegisterForm.module.css';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 
@@ -17,9 +17,7 @@ const registrationSchema = Yup.object().shape({
     .min(3, 'Name must be at least 3 characters')
     .required('Name is required'),
 
-  email: Yup.string()
-    .email('Enter a valid email')
-    .required('Email is required'),
+  mail: Yup.string().email('Enter a valid mail').required('Mail is required'),
 
   password: Yup.string()
     .min(8, 'Password must be at least 8 characters')
@@ -55,12 +53,12 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
 
       <div className={css.inputWrapper}>
         <input
-          className={`${css.input} ${errors.email ? css.errorInput : ''}`}
-          placeholder="Email"
-          {...register('email')}
-          onFocus={() => clearErrors('email')}
+          className={`${css.input} ${errors.mail ? css.errorInput : ''}`}
+          placeholder="Mail"
+          {...register('mail')}
+          onFocus={() => clearErrors('mail')}
         />
-        {errors.email && <p className={css.error}>{errors.email.message}</p>}
+        {errors.mail && <p className={css.error}>{errors.mail.message}</p>}
       </div>
 
       <div className={css.inputWrapper}>
