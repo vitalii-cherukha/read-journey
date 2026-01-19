@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAuthStore } from '../../../store/authStore';
+// import { useAuthStore } from '../../../store/authStore';
 import Container from '../../common/Container/Container';
 import RegisterForm from '../../common/RegisterForm/RegisterForm';
 import css from './RegisterPage.module.css';
@@ -7,10 +7,11 @@ import type { User } from '../../../types/user';
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
-  const setUser = useAuthStore((s) => s.setUser);
+  // const setUser = useAuthStore((s) => s.setUser);
 
   const handleSubmit = async (data: User) => {
     setLoading(true);
+    console.log(data);
   };
 
   return (

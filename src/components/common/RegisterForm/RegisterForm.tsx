@@ -14,13 +14,19 @@ interface RegisterFormProps {
 
 const registrationSchema = Yup.object().shape({
   name: Yup.string()
+    .trim()
     .min(3, 'Name must be at least 3 characters')
     .required('Name is required'),
 
-  mail: Yup.string().email('Enter a valid mail').required('Mail is required'),
+  email: Yup.string()
+    .trim()
+    .email('Enter a valid email')
+    .matches(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/, 'Enter a valid email')
+    .required('Email is required'),
 
   password: Yup.string()
-    .min(8, 'Password must be at least 8 characters')
+    .trim()
+    .min(7, 'Password must be at least 8 characters')
     .required('Password is required'),
 });
 
@@ -53,18 +59,18 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
 
       <div className={css.inputWrapper}>
         <input
-          className={`${css.input} ${errors.mail ? css.errorInput : ''}`}
-          placeholder="Mail"
-          {...register('mail')}
-          onFocus={() => clearErrors('mail')}
+          className={`${css.input} ${errors.email ? css.errorInput : ''}`}
+          placeholder="Your@email.com"
+          {...register('email')}
+          onFocus={() => clearErrors('email')}
         />
-        {errors.mail && <p className={css.error}>{errors.mail.message}</p>}
+        {errors.email && <p className={css.error}>{errors.email.message}</p>}
       </div>
 
       <div className={css.inputWrapper}>
         <input
           className={`${css.input} ${errors.password ? css.errorInput : ''}`}
-          placeholder="Password"
+          placeholder="Yourpasswordhere"
           type={showPassword ? 'text' : 'password'}
           {...register('password')}
           onFocus={() => clearErrors('password')}
