@@ -48,33 +48,42 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
       <div className={css.inputWrapper}>
-        <input
-          className={`${css.input} ${errors.name ? css.errorInput : ''}`}
-          placeholder="Name"
-          {...register('name')}
-          onFocus={() => clearErrors('name')}
-        />
+        <label className={css.label}>
+          Name:
+          <input
+            className={`${css.input} ${errors.name ? css.errorInput : ''}`}
+            placeholder="Name"
+            {...register('name')}
+            onFocus={() => clearErrors('name')}
+          />
+        </label>
         {errors.name && <p className={css.error}>{errors.name.message}</p>}
       </div>
 
       <div className={css.inputWrapper}>
-        <input
-          className={`${css.input} ${errors.email ? css.errorInput : ''}`}
-          placeholder="Your@email.com"
-          {...register('email')}
-          onFocus={() => clearErrors('email')}
-        />
+        <label className={css.label}>
+          Mail:
+          <input
+            className={`${css.input} ${errors.email ? css.errorInput : ''}`}
+            placeholder="Your@email.com"
+            {...register('email')}
+            onFocus={() => clearErrors('email')}
+          />
+        </label>
         {errors.email && <p className={css.error}>{errors.email.message}</p>}
       </div>
 
       <div className={css.inputWrapper}>
-        <input
-          className={`${css.input} ${errors.password ? css.errorInput : ''}`}
-          placeholder="Yourpasswordhere"
-          type={showPassword ? 'text' : 'password'}
-          {...register('password')}
-          onFocus={() => clearErrors('password')}
-        />
+        <label className={css.label}>
+          Password:
+          <input
+            className={`${css.input} ${errors.password ? css.errorInput : ''}`}
+            placeholder="Yourpasswordhere"
+            type={showPassword ? 'text' : 'password'}
+            {...register('password')}
+            onFocus={() => clearErrors('password')}
+          />
+        </label>
         {errors.password && (
           <p className={css.error}>{errors.password.message}</p>
         )}
