@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputWrapper {
+  position: relative;
+  padding: 14px;
+  border-radius: 12px;
+  background-color: #262626;
+}
+
+.label {
+  color: #686868;
+  font-size: 12px;
+}
+
+.input {
+  color: #f9f9f9;
+  border: none;
+  background: none;
+  font-size: 12px;
+}
+
+.input::placeholder {
+  color: #f9f9f9;
+}
+
+.error {
+  position: absolute;
+  font-size: 8px;
+}
+
+.icon {
+  fill: none;
+  stroke: #f9f9f9;
+  right: 14px;
+  top: 14px;
+}
+
+.btn {
+}
+
+.loader {
+}
