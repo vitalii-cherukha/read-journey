@@ -48,46 +48,49 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
 
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
-      <div className={css.inputWrapper}>
+      <div
+        className={`${css.inputWrapper} ${errors.name ? css.errorInput : ''}`}
+      >
         <label className={css.label}>
           Name:
           <input
-            className={`${css.input} ${errors.name ? css.errorInput : ''}`}
+            className={css.input}
             placeholder="Name"
             {...register('name')}
             onFocus={() => clearErrors('name')}
           />
         </label>
-        {errors.name && <p className={css.error}>{errors.name.message}</p>}
       </div>
+      {errors.name && <p className={css.error}>{errors.name.message}</p>}
 
-      <div className={css.inputWrapper}>
+      <div
+        className={`${css.inputWrapper} ${errors.email ? css.errorInput : ''}`}
+      >
         <label className={css.label}>
           Mail:
           <input
-            className={`${css.input} ${errors.email ? css.errorInput : ''}`}
+            className={css.input}
             placeholder="Your@email.com"
             {...register('email')}
             onFocus={() => clearErrors('email')}
           />
         </label>
-        {errors.email && <p className={css.error}>{errors.email.message}</p>}
       </div>
+      {errors.email && <p className={css.error}>{errors.email.message}</p>}
 
-      <div className={css.inputWrapper}>
+      <div
+        className={`${css.inputWrapper} ${errors.password ? css.errorInput : ''}`}
+      >
         <label className={css.label}>
           Password:
           <input
-            className={`${css.input} ${errors.password ? css.errorInput : ''}`}
+            className={css.input}
             placeholder="Yourpasswordhere"
             type={showPassword ? 'text' : 'password'}
             {...register('password')}
             onFocus={() => clearErrors('password')}
           />
         </label>
-        {errors.password && (
-          <p className={css.error}>{errors.password.message}</p>
-        )}
 
         <svg
           className={css.icon}
@@ -100,6 +103,9 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
           />
         </svg>
       </div>
+      {errors.password && (
+        <p className={css.error}>{errors.password.message}</p>
+      )}
 
       <div className={css.btnWrapper}>
         <button className={css.btn} type="submit">

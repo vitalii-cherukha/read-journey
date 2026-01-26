@@ -17,10 +17,12 @@
 }
 
 .input {
+  width: 65%;
   margin-left: 10px;
   color: #f9f9f9;
   border: none;
   background: none;
+  background-color: transparent;
   font-size: 12px;
 }
 
@@ -28,9 +30,15 @@
   color: #f9f9f9;
 }
 
+.errorInput {
+  border: 1px solid #e90516;
+}
+
 .error {
-  position: absolute;
-  font-size: 8px;
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: #e90516;
 }
 
 .icon {
