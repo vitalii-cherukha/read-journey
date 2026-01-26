@@ -17,6 +17,7 @@
 }
 
 .input {
+  margin-left: 10px;
   color: #f9f9f9;
   border: none;
   background: none;
@@ -33,13 +34,24 @@
 }
 
 .icon {
+  position: absolute;
   fill: none;
   stroke: #f9f9f9;
-  right: 14px;
-  top: 14px;
+
+  top: 13px;
+  right: 13px;
 }
 
 .btn {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  border-radius: 30px;
+  padding: 12px 29px;
+  width: 140px;
+  height: 42px;
+  color: #1f1f1f;
+  background-color: #f9f9f9;
 }
 
 .loader {
