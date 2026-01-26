@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import { BarLoader } from 'react-spinners';
 import type { User } from '../../../types/user';
+import { Link } from 'react-router';
 
 interface RegisterFormProps {
   onSubmit: (data: User) => Promise<void>;
@@ -100,18 +101,23 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
         </svg>
       </div>
 
-      <button className={css.btn} type="submit">
-        {!loading ? (
-          'Sign Up'
-        ) : (
-          <BarLoader
-            className={css.loader}
-            color="#121417"
-            speedMultiplier={3}
-            width={100}
-          />
-        )}
-      </button>
+      <div className={css.btnWrapper}>
+        <button className={css.btn} type="submit">
+          {!loading ? (
+            'Sign Up'
+          ) : (
+            <BarLoader
+              className={css.loader}
+              color="#121417"
+              speedMultiplier={3}
+              width={100}
+            />
+          )}
+        </button>
+        <Link className={css.link} to="/login">
+          Already have an account?
+        </Link>
+      </div>
     </form>
   );
 };
