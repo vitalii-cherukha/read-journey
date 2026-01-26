@@ -58,11 +58,13 @@
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.02em;
   border-radius: 30px;
-  padding: 12px 29px;
   width: 140px;
   height: 42px;
   color: #1f1f1f;

@@ -116,7 +116,7 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
               className={css.loader}
               color="#121417"
               speedMultiplier={3}
-              width={100}
+              width={70}
             />
           )}
         </button>
