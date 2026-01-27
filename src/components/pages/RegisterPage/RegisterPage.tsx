@@ -15,7 +15,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <section>
+    <section className={css.section}>
       <Container>
         <div className={css.wrapper}>
           <div className={css.formWrapper}>

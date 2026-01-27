@@ -1,4 +1,4 @@
-section {
+.section {
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -10,7 +10,7 @@ section {
 }
 
 .formWrapper {
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   border-radius: 30px;
   background-color: var(--color-bg);
 }
@@ -50,4 +50,42 @@ section {
   padding: 20px 40px;
   border-radius: 30px;
   background-color: var(--color-bg);
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .section {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .wrapper {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .formWrapper {
+    padding: 40px 168px 214px 64px;
+  }
+
+  .logo {
+    margin-bottom: 157px;
+  }
+
+  .logoText {
+    display: block;
+  }
+
+  .imgWrapper {
+    display: none;
+  }
+}
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .logo {
+    margin-bottom: 107px;
+  }
+  .imgWrapper {
+    display: block;
+  }
 }
