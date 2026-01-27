@@ -76,6 +76,11 @@
     display: block;
   }
 
+  .title {
+    font-size: 64px;
+    line-height: 94%;
+  }
+
   .imgWrapper {
     display: none;
   }
@@ -85,6 +90,11 @@
   .logo {
     margin-bottom: 107px;
   }
+
+  .formWrapper {
+    padding: 40px 64px 40px 64px;
+  }
+
   .imgWrapper {
     display: block;
   }

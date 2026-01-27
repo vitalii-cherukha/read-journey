@@ -110,7 +110,7 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
       <div className={css.btnWrapper}>
         <button className={css.btn} type="submit">
           {!loading ? (
-            'Sign Up'
+            'Registration'
           ) : (
             <BarLoader
               className={css.loader}

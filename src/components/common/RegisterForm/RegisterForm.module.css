@@ -82,3 +82,28 @@
   text-decoration-skip-ink: none;
   color: #686868;
 }
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .label {
+    font-size: 14px;
+  }
+
+  .input {
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .btn {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .link {
+    font-size: 14px;
+    line-height: 129%;
+  }
+}
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+}
