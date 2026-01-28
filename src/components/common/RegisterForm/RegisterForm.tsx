@@ -95,8 +95,8 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
         <svg
           className={css.icon}
           onClick={togglePassword}
-          width="20"
-          height="20"
+          width="18"
+          height="18"
         >
           <use
             href={`/sprite.svg#${showPassword ? 'icon-eye' : 'icon-eye-off'}`}
