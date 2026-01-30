@@ -69,6 +69,16 @@
   width: 18px;
   height: 18px;
   top: 13px;
+  right: 16px;
+}
+
+.PasswordErrorIcon {
+  position: absolute;
+  fill: none;
+  stroke: #e90516;
+  width: 18px;
+  height: 18px;
+  top: 13px;
   right: 50px;
 }
 
@@ -141,6 +151,13 @@
   }
 
   .errorIcon {
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 18px;
+  }
+
+  .PasswordErrorIcon {
     width: 20px;
     height: 20px;
     top: 15px;

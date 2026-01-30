@@ -14,10 +14,7 @@ interface RegisterFormProps {
 }
 
 const registrationSchema = Yup.object().shape({
-  name: Yup.string()
-    .trim()
-    .min(3, 'Name must be at least 3 characters')
-    .required('Name is required'),
+  name: Yup.string().trim().required('Name is required'),
 
   email: Yup.string()
     .trim()
@@ -60,6 +57,12 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
             onFocus={() => clearErrors('name')}
           />
         </label>
+
+        {errors.name && (
+          <svg className={css.errorIcon} width="18" height="18">
+            <use href="/sprite.svg#icon-error" />
+          </svg>
+        )}
       </div>
       {errors.name && <p className={css.error}>{errors.name.message}</p>}
 
@@ -75,6 +78,12 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
             onFocus={() => clearErrors('email')}
           />
         </label>
+
+        {errors.email && (
+          <svg className={css.errorIcon} width="18" height="18">
+            <use href="/sprite.svg#icon-error" />
+          </svg>
+        )}
       </div>
       {errors.email && <p className={css.error}>{errors.email.message}</p>}
 
@@ -91,6 +100,12 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
             onFocus={() => clearErrors('password')}
           />
         </label>
+
+        {errors.password && (
+          <svg className={css.PasswordErrorIcon} width="18" height="18">
+            <use href="/sprite.svg#icon-error" />
+          </svg>
+        )}
 
         <svg
           className={css.icon}
