@@ -102,7 +102,7 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
         </label>
 
         {errors.password && (
-          <svg className={css.PasswordErrorIcon} width="18" height="18">
+          <svg className={css.passwordErrorIcon} width="18" height="18">
             <use href="/sprite.svg#icon-error" />
           </svg>
         )}
