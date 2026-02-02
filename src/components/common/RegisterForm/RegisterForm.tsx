@@ -5,11 +5,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 
 import { BarLoader } from 'react-spinners';
-import type { User } from '../../../types/user';
+
 import { Link } from 'react-router';
+import type { RegisterUser } from '../../../types/user';
 
 interface RegisterFormProps {
-  onSubmit: (data: User) => Promise<void>;
+  onSubmit: (data: RegisterUser) => Promise<void>;
   loading: boolean;
 }
 
@@ -38,7 +39,7 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
     clearErrors,
     watch,
     formState: { errors, touchedFields },
-  } = useForm<User>({
+  } = useForm<RegisterUser>({
     resolver: yupResolver(registrationSchema),
     mode: 'onChange',
     reValidateMode: 'onChange',
@@ -88,7 +89,9 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
         className={`${css.inputWrapper} ${
           errors.email
             ? css.errorInput
-            : touchedFields.email && !errors.email && watchedValues?.email?.trim()
+            : touchedFields.email &&
+                !errors.email &&
+                watchedValues?.email?.trim()
               ? css.correctInput
               : ''
         }`}
@@ -109,11 +112,13 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
           </svg>
         )}
 
-        {touchedFields.email && !errors.email && watchedValues?.email?.trim() && (
-          <svg className={css.correctIcon} width="18" height="18">
-            <use href="/sprite.svg#icon-check" />
-          </svg>
-        )}
+        {touchedFields.email &&
+          !errors.email &&
+          watchedValues?.email?.trim() && (
+            <svg className={css.correctIcon} width="18" height="18">
+              <use href="/sprite.svg#icon-check" />
+            </svg>
+          )}
       </div>
       {errors.email && <p className={css.error}>{errors.email.message}</p>}
       {touchedFields.email && !errors.email && watchedValues?.email?.trim() && (
@@ -124,7 +129,9 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
         className={`${css.inputWrapper} ${
           errors.password
             ? css.errorInput
-            : touchedFields.password && !errors.password && watchedValues?.password?.trim()
+            : touchedFields.password &&
+                !errors.password &&
+                watchedValues?.password?.trim()
               ? css.correctInput
               : ''
         }`}
@@ -146,11 +153,13 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
           </svg>
         )}
 
-        {touchedFields.password && !errors.password && watchedValues?.password?.trim() && (
-          <svg className={css.passwordCorrectIcon} width="18" height="18">
-            <use href="/sprite.svg#icon-check" />
-          </svg>
-        )}
+        {touchedFields.password &&
+          !errors.password &&
+          watchedValues?.password?.trim() && (
+            <svg className={css.passwordCorrectIcon} width="18" height="18">
+              <use href="/sprite.svg#icon-check" />
+            </svg>
+          )}
 
         <svg
           className={css.icon}
@@ -166,9 +175,11 @@ const RegisterForm = ({ onSubmit, loading }: RegisterFormProps) => {
       {errors.password && (
         <p className={css.error}>{errors.password.message}</p>
       )}
-      {touchedFields.password && !errors.password && watchedValues?.password?.trim() && (
-        <p className={css.correct}>Password is secure</p>
-      )}
+      {touchedFields.password &&
+        !errors.password &&
+        watchedValues?.password?.trim() && (
+          <p className={css.correct}>Password is secure</p>
+        )}
 
       <div className={css.btnWrapper}>
         <button className={css.btn} type="submit">

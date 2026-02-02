@@ -3,13 +3,13 @@ import { useState } from 'react';
 import Container from '../../common/Container/Container';
 import RegisterForm from '../../common/RegisterForm/RegisterForm';
 import css from './RegisterPage.module.css';
-import type { User } from '../../../types/user';
+import type { RegisterUser } from '../../../types/user';
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
   // const setUser = useAuthStore((s) => s.setUser);
 
-  const handleSubmit = async (data: User) => {
+  const handleSubmit = async (data: RegisterUser) => {
     setLoading(true);
     console.log(data);
   };
