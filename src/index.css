@@ -72,16 +72,7 @@ fieldset {
 }
 
 body {
+  background-color: var(--color-section-bg);
   font-family: var(--font-primary);
   color: #f9f9f9;
-}
-
-section {
-  height: 100vh;
-  min-width: 320px;
-  background-color: var(--color-section-bg);
-}
-
-header {
-  background-color: var(--color-section-bg);
 }
