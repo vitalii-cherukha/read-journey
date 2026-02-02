@@ -17,7 +17,7 @@
 }
 
 .input {
-  width: 65%;
+  width: 50%;
   margin-left: 10px;
   color: #f9f9f9;
   border: none;
@@ -65,17 +65,15 @@
 .errorIcon {
   position: absolute;
   fill: none;
-  stroke: #e90516;
   width: 18px;
   height: 18px;
   top: 13px;
-  right: 16px;
+  right: 50px;
 }
 
-.PasswordErrorIcon {
+.passwordErrorIcon {
   position: absolute;
   fill: none;
-  stroke: #e90516;
   width: 18px;
   height: 18px;
   top: 13px;
@@ -85,7 +83,15 @@
 .correctIcon {
   position: absolute;
   fill: none;
-  stroke: #30b94d;
+  width: 18px;
+  height: 18px;
+  top: 13px;
+  right: 50px;
+}
+
+.passwordCorrectIcon {
+  position: absolute;
+  fill: none;
   width: 18px;
   height: 18px;
   top: 13px;
@@ -154,7 +160,7 @@
     width: 20px;
     height: 20px;
     top: 15px;
-    right: 18px;
+    right: 53px;
   }
 
   .passwordErrorIcon {
@@ -171,7 +177,7 @@
     right: 53px;
   }
 
-  .correctIcon {
+  .passwordCorrectIcon {
     width: 20px;
     height: 20px;
     top: 15px;
