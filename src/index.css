@@ -81,3 +81,7 @@ section {
   min-width: 320px;
   background-color: var(--color-section-bg);
 }
+
+header {
+  background-color: var(--color-section-bg);
+}
