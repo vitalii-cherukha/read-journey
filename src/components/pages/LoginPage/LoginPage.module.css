@@ -47,7 +47,7 @@
 }
 
 .imgWrapper {
-  padding: 20px 40px;
+  padding: 20px 40px 0px 40px;
   border-radius: 30px;
   background-color: var(--color-bg);
 }
@@ -100,5 +100,6 @@
 
   .imgWrapper {
     display: block;
+    padding: 80px 97px 0px 97px;
   }
 }
