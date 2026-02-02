@@ -32,7 +32,18 @@ const RegisterPage = () => {
             <RegisterForm onSubmit={handleSubmit} loading={loading} />
           </div>
           <div className={css.imgWrapper}>
-            <img src="#" />
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcSet="/src/assets/images/title-img-desktop.webp 1x, /src/assets/images/title-img-desktop@x2.webp 2x"
+              />
+              <img
+                className={css.img}
+                src="/src/assets/images/title-img-mobile.webp"
+                srcSet="/src/assets/images/title-img-mobile.webp 1x, /src/assets/images/title-img-mobile@x2.webp 2x"
+                alt="Reading illustration"
+              />
+            </picture>
           </div>
         </div>
       </Container>

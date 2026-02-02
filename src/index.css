@@ -77,5 +77,6 @@ body {
 }
 
 section {
+  min-width: 320px;
   background-color: var(--color-section-bg);
 }
