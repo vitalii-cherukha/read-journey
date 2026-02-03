@@ -1,5 +1,15 @@
+.header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 11px 20px;
+  border-radius: 15px;
+  background-color: var(--color-bg);
 }
 
 .logo {
@@ -16,10 +26,85 @@
   display: none;
 }
 
+.nav {
+  display: none;
+}
+
+.actionsWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.userWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  width: 35px;
+  height: 35px;
+  font-weight: 700;
+
+  line-height: 113%;
+  letter-spacing: -0.02em;
+}
+
+.userName {
+  display: none;
+}
+
+.menuBtn {
+}
+
+.menuIcon {
+  stroke: var(--color-text);
+}
+
+.actionsBtn {
+  display: none;
+}
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
+  .header {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
   .wrapper {
     padding: 16px 16px;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .actionsWrapper {
+    gap: 16px;
+  }
+
+  .userIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+
+  .actionsBtn {
+    display: block;
+    border: 1px solid rgba(249, 249, 249, 0.2);
+    border-radius: 30px;
+    padding: 8px 15px;
+    width: 114px;
+    height: 42px;
   }
 }
 /* Styles for Desktop devices */
@@ -30,5 +115,13 @@
     font-size: 20px;
     line-height: 1;
     text-transform: uppercase;
+  }
+
+  .userName {
+    display: block;
+    font-weight: 700;
+
+    line-height: 113%;
+    letter-spacing: -0.02em;
   }
 }
