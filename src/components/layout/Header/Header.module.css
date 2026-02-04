@@ -85,6 +85,17 @@
     display: block;
   }
 
+  .navList {
+    display: flex;
+    gap: 32px;
+  }
+
+  .navItem {
+  }
+
+  .navLink {
+  }
+
   .actionsWrapper {
     gap: 16px;
   }
@@ -115,6 +126,10 @@
     font-size: 20px;
     line-height: 1;
     text-transform: uppercase;
+  }
+
+  .navList {
+    gap: 40px;
   }
 
   .userName {

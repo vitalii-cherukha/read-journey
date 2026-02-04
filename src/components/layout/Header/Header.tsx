@@ -13,7 +13,20 @@ const Header = () => {
             </svg>
             <span className={css.logoText}>read journey</span>
           </Link>
-          <nav className={css.nav}></nav>
+          <nav className={css.nav}>
+            <ul className={css.navList}>
+              <li className={css.navItem}>
+                <Link className={css.navLink} to="/">
+                  Home
+                </Link>
+              </li>
+              <li className={css.navItem}>
+                <Link className={css.navLink} to="/library">
+                  My library
+                </Link>
+              </li>
+            </ul>
+          </nav>
           <div className={css.actionsWrapper}>
             <div className={css.userWrapper}>
               <span className={css.userIcon}>{'I'}</span>
