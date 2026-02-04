@@ -1,8 +1,11 @@
 import { Link } from 'react-router';
 import Container from '../../common/Container/Container';
 import css from './Header.module.css';
+import { useState } from 'react';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className={css.header}>
       <Container>
@@ -32,13 +35,53 @@ const Header = () => {
               <span className={css.userIcon}>{'I'}</span>
               <span className={css.userName}>{'Ilona Ratushniak'}</span>
             </div>
-            <button className={css.menuBtn}>
-              <svg className={css.menuIcon} width="28" height="28">
-                <use href="/sprite.svg#icon-menu" />
-              </svg>
+            {!isMenuOpen ? (
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                type="button"
+                className={css.menuBtn}
+              >
+                <svg className={css.menuIcon} width="28" height="28">
+                  <use href="/sprite.svg#icon-menu" />
+                </svg>
+              </button>
+            ) : (
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                type="button"
+                className={css.menuBtn}
+              >
+                <svg className={css.menuIcon} width="28" height="28">
+                  <use href="/sprite.svg#icon-exit" />
+                </svg>
+              </button>
+            )}
+            <button type="button" className={css.actionsBtn}>
+              Log out
             </button>
-            <button className={css.actionsBtn}>Log out</button>
           </div>
+        </div>
+
+        <div
+          className={`${css.burgerMenuWrapper} ${isMenuOpen ? css.isOpen : ''}`}
+        >
+          <nav className={css.burgerMenuNav}>
+            <ul className={css.burgerMenuNavList}>
+              <li className={css.burgerMenuNavItem}>
+                <Link className={css.burgerMenuNavLink} to="/">
+                  Home
+                </Link>
+              </li>
+              <li className={css.burgerMenuNavItem}>
+                <Link className={css.burgerMenuNavLink} to="/library">
+                  My library
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <button type="button" className={css.actionsBtn}>
+            Log out
+          </button>
         </div>
       </Container>
     </header>
