@@ -68,18 +68,36 @@ const Header = () => {
           <nav className={css.burgerMenuNav}>
             <ul className={css.burgerMenuNavList}>
               <li className={css.burgerMenuNavItem}>
-                <Link className={css.burgerMenuNavLink} to="/">
+                <Link
+                  className={css.burgerMenuNavLink}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                  to="/"
+                >
                   Home
                 </Link>
               </li>
               <li className={css.burgerMenuNavItem}>
-                <Link className={css.burgerMenuNavLink} to="/library">
+                <Link
+                  className={css.burgerMenuNavLink}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
+                  to="/library"
+                >
                   My library
                 </Link>
               </li>
             </ul>
           </nav>
-          <button type="button" className={css.actionsBtn}>
+          <button
+            type="button"
+            onClick={() => {
+              setIsMenuOpen(false);
+            }}
+            className={css.actionsBtnMobile}
+          >
             Log out
           </button>
         </div>
