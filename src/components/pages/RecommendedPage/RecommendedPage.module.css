@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .wrapper {
+    gap: 16px;
+  }
+}
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .wrapper {
+    flex-direction: row;
+  }
+}

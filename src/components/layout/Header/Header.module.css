@@ -1,6 +1,6 @@
 .header {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .wrapper {
@@ -136,7 +136,7 @@
 @media only screen and (min-width: 768px) {
   .header {
     margin-top: 32px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
 
   .wrapper {

@@ -4,17 +4,20 @@ import Dashboard from '../../common/Dashboard/Dashboard';
 import Filters from '../../common/Filters/Filters';
 import Quote from '../../common/Quote/Quote';
 import RecommendedBooks from '../../common/RecommendedBooks/RecommendedBooks';
+import css from './RecommendedPage.module.css';
 
 const RecommendedPage = () => {
   return (
     <section>
       <Container>
-        <Dashboard>
-          <Filters />
-          <About />
-          <Quote />
-        </Dashboard>
-        <RecommendedBooks />
+        <div className={css.wrapper}>
+          <Dashboard>
+            <Filters />
+            <About />
+            <Quote />
+          </Dashboard>
+          <RecommendedBooks />
+        </div>
       </Container>
     </section>
   );
