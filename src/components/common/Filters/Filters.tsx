@@ -5,7 +5,6 @@ import { BarLoader } from 'react-spinners';
 type FilterData = {
   title: string;
   author: string;
-  page: number;
 };
 
 interface FiltersProps {
@@ -22,32 +21,18 @@ const Filters = ({ onSubmit, loading }: FiltersProps) => {
       <div className={css.inputWrapper}>
         <label className={css.label}>
           Book title:
-          <input
-            {...register('title')}
-            type="text"
-            placeholder="I See You Are Interested In The Dark"
-          />
+          <input {...register('title')} type="text" placeholder="Enter text" />
         </label>
       </div>
       <div className={css.inputWrapper}>
         <label className={css.label}>
           The author:
-          <input
-            {...register('author')}
-            type="text"
-            placeholder="Hilarion Pavlyuk"
-          />
-        </label>
-      </div>
-      <div className={css.inputWrapper}>
-        <label className={css.label}>
-          Number of pages:
-          <input {...register('page')} type="number" placeholder="664" />
+          <input {...register('author')} type="text" placeholder="Enter text" />
         </label>
       </div>
       <button type="submit" className={css.btn}>
         {!loading ? (
-          'Add book'
+          'To apply'
         ) : (
           <BarLoader
             className={css.loader}
