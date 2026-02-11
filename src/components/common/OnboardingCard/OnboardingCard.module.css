@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   max-width: 313px;
   max-height: 272px;
   background-color: var(--color-bg-secondary);
@@ -10,6 +9,7 @@
 }
 
 .title {
+  margin-bottom: 20px;
   font-size: 18px;
   line-height: 100%;
   letter-spacing: -0.02em;
@@ -55,6 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 20px;
   font-weight: 500;
   font-size: 14px;
   line-height: 129%;
@@ -73,6 +74,15 @@
   .wrapper {
     width: 313px;
     height: 272px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+
+  .link {
+    margin-top: 26px;
   }
 }
 /* Styles for Desktop devices */
