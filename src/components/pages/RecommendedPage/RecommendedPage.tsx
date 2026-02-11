@@ -1,4 +1,4 @@
-import About from '../../common/About/About';
+import OnboardingCard from '../../common/OnboardingCard/OnboardingCard';
 import Container from '../../common/Container/Container';
 import Dashboard from '../../common/Dashboard/Dashboard';
 import Filters from '../../common/Filters/Filters';
@@ -13,7 +13,7 @@ const RecommendedPage = () => {
         <div className={css.wrapper}>
           <Dashboard>
             <Filters />
-            <About />
+            <OnboardingCard />
             <Quote />
           </Dashboard>
           <RecommendedBooks />
