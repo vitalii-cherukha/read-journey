@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 313px;
+  max-height: 272px;
   background-color: var(--color-bg-secondary);
   border-radius: 12px;
   padding: 20px;
@@ -68,6 +70,10 @@
 
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
+  .wrapper {
+    width: 313px;
+    height: 272px;
+  }
 }
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
