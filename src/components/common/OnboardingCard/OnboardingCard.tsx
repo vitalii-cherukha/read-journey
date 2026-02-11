@@ -24,7 +24,7 @@ const OnboardingCard = () => {
       <Link to="/library" className={css.link}>
         My library
         <svg className={css.icon} width="24" height="24">
-          <use href="/sprite.svg#arrow-right" />
+          <use href="/sprite.svg#icon-arrow-right" />
         </svg>
       </Link>
     </div>
