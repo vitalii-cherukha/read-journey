@@ -18,18 +18,27 @@ const Filters = ({ onSubmit, loading }: FiltersProps) => {
   return (
     <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
       <h3 className={css.title}>Filters:</h3>
-      <div className={css.inputWrapper}>
-        <label className={css.label}>
-          Book title:
-          <input {...register('title')} type="text" placeholder="Enter text" />
-        </label>
-      </div>
-      <div className={css.inputWrapper}>
-        <label className={css.label}>
-          The author:
-          <input {...register('author')} type="text" placeholder="Enter text" />
-        </label>
-      </div>
+
+      <label className={css.label}>
+        Book title:
+        <input
+          className={css.input}
+          {...register('title')}
+          type="text"
+          placeholder="Enter text"
+        />
+      </label>
+
+      <label className={css.label}>
+        The author:
+        <input
+          className={css.input}
+          {...register('author')}
+          type="text"
+          placeholder="Enter text"
+        />
+      </label>
+
       <button type="submit" className={css.btn}>
         {!loading ? (
           'To apply'
