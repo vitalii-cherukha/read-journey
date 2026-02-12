@@ -8,5 +8,8 @@
 @media only screen and (min-width: 1440px) {
   .wrapper {
     display: block;
+    padding: 15px 20px 28px 20px;
+    background-color: var(--color-bg-secondary);
+    border-radius: 12px;
   }
 }
