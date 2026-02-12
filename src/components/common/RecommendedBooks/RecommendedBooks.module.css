@@ -5,10 +5,31 @@
   padding: 40px 20px;
 }
 
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+}
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .wrapper {
     padding: 40px 40px;
+  }
+
+  .titleWrapper {
+    margin-bottom: 28px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 114%;
   }
 }
 /* Styles for Desktop devices */
