@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://readjourney.b.goit.study/api';
-
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
@@ -27,7 +25,7 @@ api.interceptors.response.use(
       window.location.href = '/login';
     }
     return Promise.reject(error);
-  }
+  },
 );
 
 export const authAPI = {
@@ -63,12 +61,17 @@ export const authAPI = {
 
 export const booksAPI = {
   // Отримати рекомендовані книги
-  getRecommended: async (page = 1, limit = 10, title?: string, author?: string) => {
+  getRecommended: async (
+    page = 1,
+    limit = 10,
+    title?: string,
+    author?: string,
+  ) => {
     const params = new URLSearchParams({
       page: page.toString(),
       limit: limit.toString(),
     });
-    
+
     if (title) params.append('title', title);
     if (author) params.append('author', author);
 
@@ -90,7 +93,11 @@ export const booksAPI = {
 
   // Додати нову книгу
   addBook: async (title: string, author: string, totalPages: number) => {
-    const { data } = await api.post('/books/add', { title, author, totalPages });
+    const { data } = await api.post('/books/add', {
+      title,
+      author,
+      totalPages,
+    });
     return data;
   },
 
@@ -107,13 +114,19 @@ export const booksAPI = {
 
   // Почати читання книги
   startReading: async (bookId: string, page: number) => {
-    const { data } = await api.post('/books/reading/start', { id: bookId, page });
+    const { data } = await api.post('/books/reading/start', {
+      id: bookId,
+      page,
+    });
     return data;
   },
 
   // Закінчити читання книги
   finishReading: async (bookId: string, page: number) => {
-    const { data } = await api.post('/books/reading/finish', { id: bookId, page });
+    const { data } = await api.post('/books/reading/finish', {
+      id: bookId,
+      page,
+    });
     return data;
   },
 
