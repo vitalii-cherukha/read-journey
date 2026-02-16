@@ -1,15 +1,12 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: 'https://readjourney.b.goit.study/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// TODO: Додати interceptor для автоматичного додавання token до headers
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
@@ -18,7 +15,6 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// TODO: Додати interceptor для обробки 401 помилок
 api.interceptors.response.use(
   (response) => response,
   (error) => {
