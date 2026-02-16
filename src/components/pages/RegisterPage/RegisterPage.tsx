@@ -15,7 +15,6 @@ const RegisterPage = () => {
     setLoading(true);
     register(data.name, data.email, data.password)
       .then(() => {
-        // Переадресація на recommended page при успішній реєстрації
         navigate('/recommended');
       })
       .finally(() => setLoading(false));
