@@ -1,17 +1,24 @@
 import { useState } from 'react';
-// import { useAuthStore } from '../../../store/authStore';
+import { useNavigate } from 'react-router';
 import Container from '../../common/Container/Container';
 import RegisterForm from '../../common/RegisterForm/RegisterForm';
 import css from './RegisterPage.module.css';
 import type { RegisterUser } from '../../../types/user';
+import { useAuthStore } from '../../../store/authStore';
 
 const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
-  // const setUser = useAuthStore((s) => s.setUser);
+  const register = useAuthStore((s) => s.register);
+  const navigate = useNavigate();
 
   const handleSubmit = async (data: RegisterUser) => {
     setLoading(true);
-    console.log(data);
+    register(data.name, data.email, data.password)
+      .then(() => {
+        // Переадресація на recommended page при успішній реєстрації
+        navigate('/recommended');
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
