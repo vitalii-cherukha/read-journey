@@ -1,11 +1,7 @@
 import { useForm } from 'react-hook-form';
 import css from './Filters.module.css';
 import { BarLoader } from 'react-spinners';
-
-type FilterData = {
-  title: string;
-  author: string;
-};
+import type { FilterData } from '../../../types/filter';
 
 interface FiltersProps {
   onSubmit: (data: FilterData) => void;
