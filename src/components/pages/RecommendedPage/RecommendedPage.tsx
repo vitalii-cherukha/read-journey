@@ -10,10 +10,12 @@ import type { FilterData } from '../../../types/filter';
 
 const RecommendedPage = () => {
   const [loading, setLoading] = useState(false);
+  const [searchParams, setSearchParams] = useState({});
 
   const handleSubmit = (data: FilterData) => {
     setLoading(true);
-    console.log(data);
+    setSearchParams(data);
+    setLoading(false);
   };
 
   return (
@@ -25,7 +27,7 @@ const RecommendedPage = () => {
             <OnboardingCard />
             <Quote />
           </Dashboard>
-          <RecommendedBooks />
+          <RecommendedBooks searchParams={searchParams} />
         </div>
       </Container>
     </section>
