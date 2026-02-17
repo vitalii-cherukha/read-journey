@@ -4,14 +4,21 @@ import Container from '../../common/Container/Container';
 import LoginForm from '../../common/LoginForm/LoginForm';
 import css from './LoginPage.module.css';
 import type { LoginUser } from '../../../types/user';
+import { useAuthStore } from '../../../store/authStore';
+import { useNavigate } from 'react-router';
 
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
-  // const setUser = useAuthStore((s) => s.setUser);
+  const login = useAuthStore((s) => s.login);
+  const navigate = useNavigate();
 
   const handleSubmit = async (data: LoginUser) => {
     setLoading(true);
-    console.log(data);
+    login(data.email, data.password)
+      .then(() => {
+        navigate('/recommended');
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
