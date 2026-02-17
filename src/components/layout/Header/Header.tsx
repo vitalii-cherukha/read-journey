@@ -2,9 +2,12 @@ import { Link } from 'react-router';
 import Container from '../../common/Container/Container';
 import css from './Header.module.css';
 import { useState } from 'react';
+import { useAuthStore } from '../../../store/authStore';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const logout = useAuthStore((s) => s.logout);
 
   return (
     <header className={css.header}>
@@ -56,7 +59,11 @@ const Header = () => {
                 </svg>
               </button>
             )}
-            <button type="button" className={css.actionsBtn}>
+            <button
+              onClick={() => logout()}
+              type="button"
+              className={css.actionsBtn}
+            >
               Log out
             </button>
           </div>
@@ -94,6 +101,7 @@ const Header = () => {
           <button
             type="button"
             onClick={() => {
+              logout();
               setIsMenuOpen(false);
             }}
             className={css.actionsBtnMobile}
