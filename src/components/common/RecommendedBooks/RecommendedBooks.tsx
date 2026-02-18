@@ -3,6 +3,7 @@ import { booksAPI } from '../../../api/api';
 import type { FilterData } from '../../../types/filter';
 import type { Book } from '../../../types/book';
 import css from './RecommendedBooks.module.css';
+import { PuffLoader } from 'react-spinners';
 
 interface RecommendedBooksProps {
   searchParams: FilterData;
@@ -14,16 +15,36 @@ const RecommendedBooks = ({ searchParams }: RecommendedBooksProps) => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  // Завантаження книг при зміні фільтрів або сторінки
+  const getLimit = () => {
+    if (window.innerWidth >= 1440) return 10; // Desktop
+    if (window.innerWidth >= 768) return 8; // Tablet
+    return 2; // Mobile
+  };
+
+  const [limit, setLimit] = useState(getLimit());
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newLimit = getLimit();
+      if (newLimit !== limit) {
+        setLimit(newLimit);
+        setPage(1);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [limit]);
+
   useEffect(() => {
     const fetchBooks = async () => {
       try {
         setLoading(true);
         const response = await booksAPI.getRecommended(
           page,
-          10,
+          limit,
           searchParams.title,
-          searchParams.author
+          searchParams.author,
         );
         setBooks(response.results);
         setTotalPages(response.totalPages);
@@ -35,31 +56,34 @@ const RecommendedBooks = ({ searchParams }: RecommendedBooksProps) => {
     };
 
     fetchBooks();
-  }, [searchParams, page]);
+  }, [searchParams, page, limit]);
 
   return (
     <div className={css.wrapper}>
       <div className={css.titleWrapper}>
         <h2 className={css.title}>Recommended</h2>
         <div className={css.pagination}>
-          <button onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page === 1}>
+          <button
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={page === 1}
+          >
             &lt;
           </button>
-          <button onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page === totalPages}>
+          <button
+            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            disabled={page === totalPages}
+          >
             &gt;
           </button>
         </div>
       </div>
-      
+
       {loading ? (
-        <p>Loading...</p>
+        <PuffLoader color="#262626" size={100} />
       ) : (
         <ul className={css.list}>
           {books.map((book) => (
-            <li key={book._id}>
-              {/* TODO: Додати BookCard компонент */}
-              {book.title}
-            </li>
+            <li key={book._id}>{book.title}</li>
           ))}
         </ul>
       )}
