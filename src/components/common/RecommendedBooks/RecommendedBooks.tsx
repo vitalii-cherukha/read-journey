@@ -26,15 +26,18 @@ const RecommendedBooks = ({ searchParams }: RecommendedBooksProps) => {
   useEffect(() => {
     const handleResize = () => {
       const newLimit = getLimit();
-      if (newLimit !== limit) {
-        setLimit(newLimit);
-        setPage(1);
-      }
+      setLimit((prevLimit) => {
+        if (newLimit !== prevLimit) {
+          setPage(1);
+          return newLimit;
+        }
+        return prevLimit;
+      });
     };
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [limit]);
+  }, []);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -56,7 +59,7 @@ const RecommendedBooks = ({ searchParams }: RecommendedBooksProps) => {
     };
 
     fetchBooks();
-  }, [searchParams, page, limit]);
+  }, [searchParams.title, searchParams.author, page, limit]);
 
   return (
     <div className={css.wrapper}>
