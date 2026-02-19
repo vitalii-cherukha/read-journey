@@ -7,7 +7,6 @@ import { AxiosError } from 'axios';
 interface AuthStore {
   user: User | null;
   token: string | null;
-  isAuthenticated: boolean;
   isLoading: boolean;
   error: string | null;
 
@@ -40,7 +39,6 @@ export const useAuthStore = create<AuthStore>()(
         // Початковий стан
         user: null,
         token: null,
-        isAuthenticated: false,
         isLoading: false,
         error: null,
 
@@ -57,9 +55,12 @@ export const useAuthStore = create<AuthStore>()(
 
             // Оновлюємо store з даними користувача
             set({
-              user: { id: response.id, name: response.name, email: response.email },
+              user: {
+                id: response.id,
+                name: response.name,
+                email: response.email,
+              },
               token: response.token,
-              isAuthenticated: true,
               isLoading: false,
             });
           } catch (error) {
@@ -87,9 +88,12 @@ export const useAuthStore = create<AuthStore>()(
 
             // Оновлюємо store
             set({
-              user: { id: response.id, name: response.name, email: response.email },
+              user: {
+                id: response.id,
+                name: response.name,
+                email: response.email,
+              },
               token: response.token,
-              isAuthenticated: true,
               isLoading: false,
             });
           } catch (error) {
@@ -115,7 +119,6 @@ export const useAuthStore = create<AuthStore>()(
             set({
               user: null,
               token: null,
-              isAuthenticated: false,
               error: null,
             });
           }
@@ -127,7 +130,6 @@ export const useAuthStore = create<AuthStore>()(
           set({
             user,
             token,
-            isAuthenticated: true,
           });
         },
 
@@ -137,7 +139,7 @@ export const useAuthStore = create<AuthStore>()(
 
           // Якщо немає token - користувач не авторизований
           if (!token) {
-            set({ isAuthenticated: false });
+            set({ user: null });
             return;
           }
 
@@ -149,7 +151,6 @@ export const useAuthStore = create<AuthStore>()(
             set({
               user,
               token,
-              isAuthenticated: true,
             });
           } catch {
             // Token невалідний - очищаємо store
@@ -157,7 +158,6 @@ export const useAuthStore = create<AuthStore>()(
             set({
               user: null,
               token: null,
-              isAuthenticated: false,
             });
           }
         },
@@ -168,7 +168,6 @@ export const useAuthStore = create<AuthStore>()(
           set({
             user: null,
             token: null,
-            isAuthenticated: false,
             error: null,
           });
         },
@@ -184,7 +183,6 @@ export const useAuthStore = create<AuthStore>()(
         partialize: (state) => ({
           user: state.user,
           token: state.token,
-          isAuthenticated: state.isAuthenticated,
         }),
       },
     ),
