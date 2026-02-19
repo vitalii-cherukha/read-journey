@@ -1,4 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router';
+import { useEffect } from 'react';
 import NotFound from './components/common/NotFound/NotFound';
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import RegisterPage from './components/pages/RegisterPage/RegisterPage';
@@ -10,6 +11,12 @@ import { useAuthStore } from './store/authStore';
 
 function App() {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const checkAuth = useAuthStore((state) => state.checkAuth);
+
+  // Перевіряємо авторизацію при завантаженні додатку
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
   return (
     <main>
