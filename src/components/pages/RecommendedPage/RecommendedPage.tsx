@@ -10,7 +10,10 @@ import type { FilterData } from '../../../types/filter';
 
 const RecommendedPage = () => {
   const [loading, setLoading] = useState(false);
-  const [searchParams, setSearchParams] = useState({});
+  const [searchParams, setSearchParams] = useState<FilterData>({
+    title: '',
+    author: '',
+  });
 
   const handleSubmit = (data: FilterData) => {
     setLoading(true);
