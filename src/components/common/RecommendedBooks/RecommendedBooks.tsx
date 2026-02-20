@@ -86,7 +86,17 @@ const RecommendedBooks = ({ searchParams }: RecommendedBooksProps) => {
       ) : (
         <ul className={css.list}>
           {books.map((book) => (
-            <li key={book._id}>{book.title}</li>
+            <li className={css.bookItem} key={book._id}>
+              <img
+                className={css.bookImg}
+                src={book.imageUrl}
+                alt={book.title}
+                width="137"
+                height="208"
+              />
+              <h3 className={css.bookTitle}>{book.title}</h3>
+              <p className={css.bookAuthor}>{book.author}</p>
+            </li>
           ))}
         </ul>
       )}
