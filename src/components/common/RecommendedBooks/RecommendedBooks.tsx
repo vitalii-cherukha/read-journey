@@ -70,13 +70,17 @@ const RecommendedBooks = ({ searchParams }: RecommendedBooksProps) => {
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
           >
-            &lt;
+            <svg className={css.paginationIcon} width="16" height="16">
+              <use href="#icon-chevron-left" />
+            </svg>
           </button>
           <button
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
           >
-            &gt;
+            <svg className={css.paginationIcon} width="16" height="16">
+              <use href="#icon-chevron-right" />
+            </svg>
           </button>
         </div>
       </div>

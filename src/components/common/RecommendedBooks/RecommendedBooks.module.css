@@ -17,6 +17,11 @@
   letter-spacing: -0.02em;
 }
 
+.paginationIcon {
+  fill: var(--color-text);
+  stroke: var(--color-text);
+}
+
 .list {
   display: flex;
   gap: 21px;
@@ -71,8 +76,8 @@
   .list {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 25px;
-    column-gap: 27px;
+    row-gap: 27px;
+    column-gap: 25px;
   }
 
   .bookItem {
