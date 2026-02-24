@@ -52,6 +52,7 @@
 }
 
 .icon {
+  cursor: pointer;
   position: absolute;
   fill: none;
   stroke: #f9f9f9;
