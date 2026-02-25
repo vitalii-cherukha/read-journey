@@ -92,4 +92,8 @@
   .wrapper {
     padding: 40px 40px 28px 40px;
   }
+
+  .list {
+    column-gap: 20px;
+  }
 }
