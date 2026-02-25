@@ -8,6 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const logout = useAuthStore((s) => s.logout);
+  const user = useAuthStore((s) => s.user);
 
   return (
     <header className={css.header}>
@@ -35,8 +36,10 @@ const Header = () => {
           </nav>
           <div className={css.actionsWrapper}>
             <div className={css.userWrapper}>
-              <span className={css.userIcon}>{'I'}</span>
-              <span className={css.userName}>{'Ilona Ratushniak'}</span>
+              <span className={css.userIcon}>
+                {user?.name.charAt(0) || 'U'}
+              </span>
+              <span className={css.userName}>{user?.name || 'Guest'}</span>
             </div>
             {!isMenuOpen ? (
               <button
