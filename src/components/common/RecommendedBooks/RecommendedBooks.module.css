@@ -17,8 +17,23 @@
   letter-spacing: -0.02em;
 }
 
+.pagination {
+  display: flex;
+  gap: 8px;
+}
+
+.paginationBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .paginationIcon {
-  fill: var(--color-text);
+  fill: none;
   stroke: var(--color-text);
 }
 

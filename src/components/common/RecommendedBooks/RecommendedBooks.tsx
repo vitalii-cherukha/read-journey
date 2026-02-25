@@ -66,20 +66,20 @@ const RecommendedBooks = ({ searchParams }: RecommendedBooksProps) => {
       <div className={css.titleWrapper}>
         <h2 className={css.title}>Recommended</h2>
         <div className={css.pagination}>
-          <button
+          <button className={css.paginationBtn} 
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
           >
             <svg className={css.paginationIcon} width="16" height="16">
-              <use href="#icon-chevron-left" />
+              <use href="/sprite.svg#icon-chevron-left" />
             </svg>
           </button>
-          <button
+          <button className={css.paginationBtn} 
             onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
           >
             <svg className={css.paginationIcon} width="16" height="16">
-              <use href="#icon-chevron-right" />
+              <use href="/public/sprite.svg#icon-chevron-right" />
             </svg>
           </button>
         </div>
