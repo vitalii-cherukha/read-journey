@@ -39,9 +39,10 @@ const AddBook = ({ onSubmit, loading }: AddBookProps) => {
         Number of pages:
         <input
           className={css.input}
-          {...register('number')}
+          {...register('number', { valueAsNumber: true, min: 1 })}
           type="number"
           placeholder="0"
+          min="1"
         />
       </label>
 
