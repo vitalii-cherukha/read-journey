@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import css from './AddBook.module.css';
 import type { AddBookData } from '../../../types/filter';
+import { BarLoader } from 'react-spinners';
 
 interface AddBookProps {
   onSubmit: (data: { title: string; author: string; number: number }) => void;
@@ -20,7 +21,7 @@ const AddBook = ({ onSubmit, loading }: AddBookProps) => {
           className={css.input}
           {...register('title')}
           type="text"
-          placeholder="I See You Are Interested In The Dark"
+          placeholder="Enter text"
         />
       </label>
 
@@ -30,7 +31,7 @@ const AddBook = ({ onSubmit, loading }: AddBookProps) => {
           className={css.input}
           {...register('author')}
           type="text"
-          placeholder="Hilarion Pavlyuk"
+          placeholder="Enter text"
         />
       </label>
 
@@ -40,7 +41,7 @@ const AddBook = ({ onSubmit, loading }: AddBookProps) => {
           className={css.input}
           {...register('number')}
           type="number"
-          placeholder="664"
+          placeholder="0"
         />
       </label>
 
