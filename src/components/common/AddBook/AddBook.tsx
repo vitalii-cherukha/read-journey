@@ -2,17 +2,40 @@ import { useForm } from 'react-hook-form';
 import css from './AddBook.module.css';
 import type { AddBookData } from '../../../types/filter';
 import { BarLoader } from 'react-spinners';
+import { useEffect, useState } from 'react';
+import { booksAPI } from '../../../api/api';
 
-interface AddBookProps {
-  onSubmit: (data: { title: string; author: string; number: number }) => void;
-  loading: boolean;
-}
+const AddBook = () => {
+  const [loading, setLoading] = useState(false);
+  const [bookParams, setBookParams] = useState<AddBookData>({
+    title: '',
+    author: '',
+    totalPages: 0,
+  });
 
-const AddBook = ({ onSubmit, loading }: AddBookProps) => {
+  useEffect(() => {
+    const addBook = async () => {
+      try {
+        setLoading(true);
+        const response = await booksAPI.addBook(
+          bookParams.author,
+          bookParams.title,
+          bookParams.totalPages,
+        );
+        console.log('Book added successfully:', response);
+      } catch (error) {
+        console.error('Failed to add book:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    addBook();
+  }, [bookParams]);
+
   const { register, handleSubmit } = useForm<AddBookData>();
 
   return (
-    <form className={css.form} onSubmit={handleSubmit(onSubmit)}>
+    <form className={css.form} onSubmit={handleSubmit(setBookParams)}>
       <h3 className={css.title}>Filters:</h3>
 
       <label className={css.label}>
@@ -39,7 +62,7 @@ const AddBook = ({ onSubmit, loading }: AddBookProps) => {
         Number of pages:
         <input
           className={css.input}
-          {...register('number', { valueAsNumber: true, min: 1 })}
+          {...register('totalPages', { valueAsNumber: true, min: 1 })}
           type="number"
           placeholder="0"
           min="1"

@@ -6,5 +6,5 @@ export type FilterData = {
 export type AddBookData = {
   title: string;
   author: string;
-  number: number;
+  totalPages: number;
 };
