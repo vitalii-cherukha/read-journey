@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   max-width: 313px;
-  max-height: 272px;
+  height: 244px;
   background-color: var(--color-bg-secondary);
   border-radius: 12px;
   padding: 20px;
@@ -59,10 +59,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 17px;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 129%;
+  font-size: 12px;
+  line-height: 117%;
   letter-spacing: -0.02em;
   text-decoration: underline;
   text-decoration-skip-ink: none;
@@ -70,6 +70,8 @@
 }
 
 .icon {
+  width: 20px;
+  height: 20px;
   stroke: var(--color-text);
 }
 
@@ -81,11 +83,24 @@
   }
 
   .title {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 20px;
+  }
+
+  .link {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 129%;
+  }
+  .icon {
+    width: 24px;
+    height: 24px;
   }
 }
 
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
+  .wrapper {
+    height: 259px;
+  }
 }
