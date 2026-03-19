@@ -39,8 +39,8 @@ const RecommendedCard = () => {
                 className={css.bookImg}
                 src={book.imageUrl}
                 alt={book.title}
-                width="137"
-                height="208"
+                width="71"
+                height="107"
               />
               <h3 className={css.bookTitle}>{book.title}</h3>
               <p className={css.bookAuthor}>{book.author}</p>
