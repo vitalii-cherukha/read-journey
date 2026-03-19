@@ -3,6 +3,7 @@ import css from './RecommendedCard.module.css';
 import { booksAPI } from '../../../api/api';
 import { PuffLoader } from 'react-spinners';
 import type { Book } from '../../../types/book';
+import { Link } from 'react-router';
 
 const RecommendedCard = () => {
   const [loading, setLoading] = useState(false);
@@ -48,6 +49,12 @@ const RecommendedCard = () => {
           ))}
         </ul>
       )}
+      <Link to="/recommended" className={css.link}>
+        Home
+        <svg className={css.icon} width="24" height="24">
+          <use href="/sprite.svg#icon-arrow-right" />
+        </svg>
+      </Link>
     </div>
   );
 };

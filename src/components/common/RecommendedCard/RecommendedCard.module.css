@@ -55,6 +55,24 @@
   color: #686868;
 }
 
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #686868;
+}
+
+.icon {
+  stroke: var(--color-text);
+}
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .wrapper {
