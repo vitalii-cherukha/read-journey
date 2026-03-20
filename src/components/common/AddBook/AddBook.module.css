@@ -70,4 +70,7 @@
 }
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
+  .form {
+    width: 313px;
+  }
 }
