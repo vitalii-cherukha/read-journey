@@ -1,8 +1,7 @@
 .wrapper {
-  height: 528px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
   background-color: var(--color-bg);
   border-radius: 30px;
   padding: 20px;
@@ -11,6 +10,7 @@
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .wrapper {
+    gap: 32px;
     height: 336px;
     flex-direction: row;
     padding: 32px;
@@ -19,6 +19,8 @@
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
   .wrapper {
+    gap: 0;
+    justify-content: space-between;
     height: 651px;
     flex-direction: column;
     padding: 40px 20px;
