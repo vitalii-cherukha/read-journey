@@ -1,9 +1,21 @@
 import { PuffLoader } from 'react-spinners';
 import css from './MyLibraryBooks.module.css';
 import { useState } from 'react';
+import type { Book } from '../../../types/book';
 
 const MyLibraryBooks = () => {
   const [loading, setLoading] = useState(false);
+  const [books, setBooks] = useState<Book[]>([]);
+    const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const getLimit = () => {
+    if (window.innerWidth >= 1440) return 10; // Desktop
+    if (window.innerWidth >= 768) return 8; // Tablet
+    return 2; // Mobile
+  };
+
+  const [limit, setLimit] = useState(getLimit());
 
   return (
     <div className={css.wrapper}>
@@ -33,7 +45,7 @@ const MyLibraryBooks = () => {
 
       {loading ? (
         <PuffLoader color="#262626" size={100} />
-      ) : (
+      ) : books.length > 0 ? (
         <ul className={css.list}>
           {books.map((book) => (
             <li className={css.bookItem} key={book._id}>
@@ -49,6 +61,8 @@ const MyLibraryBooks = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <p className={css.noBooks}>No books found</p>
       )}
     </div>
   );
