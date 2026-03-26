@@ -78,8 +78,8 @@ export const booksAPI = {
   },
 
   // Отримати власну бібліотеку
-  getOwnBooks: async () => {
-    const { data } = await api.get('/books/own');
+  getOwnBooks: async (status?: string) => {
+    const { data } = await api.get(`/books/own?${status}`);
     return data;
   },
 

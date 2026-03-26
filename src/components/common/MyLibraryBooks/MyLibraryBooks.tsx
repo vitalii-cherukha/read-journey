@@ -1,46 +1,35 @@
 import { PuffLoader } from 'react-spinners';
 import css from './MyLibraryBooks.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Book } from '../../../types/book';
+import { booksAPI } from '../../../api/api';
 
 const MyLibraryBooks = () => {
+  const [statusParams, setStatusParams] = useState(status:'');
   const [loading, setLoading] = useState(false);
   const [books, setBooks] = useState<Book[]>([]);
-    const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
 
-  const getLimit = () => {
-    if (window.innerWidth >= 1440) return 10; // Desktop
-    if (window.innerWidth >= 768) return 8; // Tablet
-    return 2; // Mobile
-  };
 
-  const [limit, setLimit] = useState(getLimit());
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        setLoading(true);
+        const response = await booksAPI.getOwnBooks(statusParams);
+        setBooks(response.results);
+      } catch (error) {
+        console.error('Failed to fetch books:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBooks();
+  }, [statusParams]);
 
   return (
     <div className={css.wrapper}>
       <div className={css.titleWrapper}>
-        <h2 className={css.title}>Recommended</h2>
-        <div className={css.pagination}>
-          <button
-            className={css.paginationBtn}
-            onClick={() => setPage((p) => Math.max(1, p - 1))}
-            disabled={page === 1}
-          >
-            <svg className={css.paginationIcon} width="16" height="16">
-              <use href="/sprite.svg#icon-chevron-left" />
-            </svg>
-          </button>
-          <button
-            className={css.paginationBtn}
-            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-            disabled={page === totalPages}
-          >
-            <svg className={css.paginationIcon} width="16" height="16">
-              <use href="/public/sprite.svg#icon-chevron-right" />
-            </svg>
-          </button>
-        </div>
+        <h2 className={css.title}>My library</h2>
       </div>
 
       {loading ? (
