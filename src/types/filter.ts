@@ -8,3 +8,7 @@ export type AddBookData = {
   author: string;
   totalPages: number;
 };
+
+export type StatusFilterBooks = {
+  status: '' | 'unread' | 'in-progress' | 'done';
+};

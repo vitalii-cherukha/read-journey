@@ -5,7 +5,7 @@ import type { Book } from '../../../types/book';
 import { booksAPI } from '../../../api/api';
 
 const MyLibraryBooks = () => {
-  const [statusParams, setStatusParams] = useState(status:'');
+  const [statusParams, setStatusParams] = useState(status: StatusFilterBooks);
   const [loading, setLoading] = useState(false);
   const [books, setBooks] = useState<Book[]>([]);
 

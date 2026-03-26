@@ -1,4 +1,5 @@
 import axios from 'axios';
+import type { StatusFilterBooks } from '../types/filter';
 
 const api = axios.create({
   baseURL: 'https://readjourney.b.goit.study/api',
@@ -78,7 +79,7 @@ export const booksAPI = {
   },
 
   // Отримати власну бібліотеку
-  getOwnBooks: async (status?: string) => {
+  getOwnBooks: async (status: StatusFilterBooks) => {
     const { data } = await api.get(`/books/own?${status}`);
     return data;
   },
